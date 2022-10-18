@@ -1,0 +1,138 @@
+ruby-hashie (3.5.5-4) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Wed, 20 Jul 2022 16:21:50 +0800
+
+ruby-hashie (3.5.5-4) unstable; urgency=medium
+
+  [ Daniel Leidert ]
+  * Make sure we don't need simplecov on salsa either
+  * Fix code
+
+  [ Pirate Praveen ]
+  * Switch to gem-install layout
+  * Bump Standards-Version to 4.6.0 (no changes needed)
+  * Move debian/watch to gemwatch.debian.net
+  * Use ${ruby:Depends} for ruby dependencies
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 05 Feb 2022 21:55:01 +0530
+
+ruby-hashie (3.5.5-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Use secure URI in debian/watch.
+  * Bump debhelper from old 11 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+  * Apply multi-arch hints.
+    + ruby-hashie: Add :any qualifier for ruby dependency.
+  * Update watch file format version to 4.
+
+  [ Daniel Leidert ]
+  * d/patches/0002-Suppress-keyword-arguments-warning-for-Ruby-2.7.0.patch: Add
+    - Fix ArgumentError with Ruby 3 (closes: #996239).
+  * d/patches/series: Enable new patch.
+
+ -- Daniel Leidert <dleidert@debian.org>  Wed, 24 Nov 2021 05:48:59 +0100
+
+ruby-hashie (3.5.5-2) unstable; urgency=medium
+
+  * Reupload to unstable
+  * Bump standards version to 4.1.3, debhelper compat to 11
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 21 Feb 2018 22:37:34 +0530
+
+ruby-hashie (3.5.5-1) experimental; urgency=medium
+
+  * New upstream release
+  * Add ruby-rspec-pending-for, ruby-sinatra, ruby-omniauth and ruby-rack-test
+    as build dependencies
+  * Disable rails integration tests
+  * Bump standards version to 4.0.0 (no changes)
+
+ -- Pirate Praveen <praveen@debian.org>  Mon, 03 Jul 2017 17:55:13 +0530
+
+ruby-hashie (3.4.4-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Cédric Boutillier ]
+  * Use https:// in Vcs-* fields
+
+  [ Christian Hofstaedtler ]
+  * New upstream version.
+  * Drop upstream applied patch for Ruby 2.3
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Thu, 05 May 2016 23:02:51 +0000
+
+ruby-hashie (3.4.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * Imported Upstream version 3.4.3, refreshed local patches.
+  * Add patch from upstream improving ruby2.3 compatibility.
+  * Update packaging using dh-make-ruby -w
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Wed, 02 Mar 2016 18:07:02 +0100
+
+ruby-hashie (3.4.2-3) unstable; urgency=medium
+
+  * Team upload
+  * fixup-tests.patch: skip an expected failure that is know to break on Ruby
+    > 2.2.0, but works on Ruby >= 2.2.3 (Closes: #796514)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 12 Dec 2015 12:42:16 -0200
+
+ruby-hashie (3.4.2-2) unstable; urgency=medium
+
+  * Team upload
+  * Conflicts: ruby-rash (see #792548)
+  * 0001-spec-spec_helper.rb-don-t-load-pry.patch: skip loading pry when
+    running the teste suite (see #794657)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Wed, 05 Aug 2015 09:36:31 -0300
+
+ruby-hashie (3.4.2-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Update packaging with a new dh-make-ruby run
+
+ -- Antonio Terceiro <terceiro@debian.org>  Wed, 15 Jul 2015 15:08:08 -0300
+
+ruby-hashie (2.0.5-1) unstable; urgency=low
+
+  * Team Upload
+
+  [ Nitesh A Jain ]
+  * New upstream release
+
+  [ Pirate Praveen ]
+  * Build with gem2deb >= 0.7.5 (install gemspecs for all ruby versions)
+  * Bump standards version to 3.9.5 (no changes)
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 07 May 2014 12:22:19 +0530
+
+ruby-hashie (2.0.3-1) unstable; urgency=low
+
+  * New upstream release
+  * README.markdown replaces README.rdoc
+  * CONTRIBUTING.md is installed as doc
+  * Update to standards version 3.9.4 (DM-Upload-Allowed is obsolete)
+  * Update vcs fields
+  * Upstream now provides a changelog as CHANGELOG.md (installed)
+
+ -- Praveen Arimbrathodiyil <praveen@debian.org>  Wed, 17 Apr 2013 13:39:31 +0530
+
+ruby-hashie (1.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #647066)
+
+ -- Praveen Arimbrathodiyil <praveen@debian.org>  Wed, 31 Oct 2012 14:15:50 +0530

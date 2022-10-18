@@ -1,0 +1,35 @@
+Source: ruby-hashie
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               pry,
+               rake,
+               ruby-activesupport,
+               ruby-rspec,
+               ruby-rspec-pending-for,
+               ruby-rack-test,
+               ruby-sinatra,
+               ruby-omniauth
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-hashie.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-hashie
+Homepage: https://github.com/intridea/hashie
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-hashie
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${ruby:Depends},
+         ${misc:Depends},
+         ${shlibs:Depends}
+Conflicts: ruby-rash
+Description: small collection of tools that make hashes more powerful
+ Hashie is a growing collection of tools that extend Hashes and make
+ them more useful.
+ .
+ Currently includes Mash (Mocking Hash), Dash (Discrete Hash), Trash,
+ and Clash.

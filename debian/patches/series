@@ -1,0 +1,2 @@
+0001-spec-spec_helper.rb-don-t-load-pry.patch
+0002-Suppress-keyword-arguments-warning-for-Ruby-2.7.0.patch

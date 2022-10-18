@@ -1,0 +1,40 @@
+From: Koichi ITO <koic.ito@gmail.com>
+Date: Wed, 15 Jan 2020 12:42:44 +0900
+Subject: Suppress keyword arguments warning for Ruby 2.7.0
+
+This PR suppresses the following keyword arguments warning for Ruby 2.7.0.
+
+```console
+% bundle exec rspec spec/hashie/extensions/mash/symbolize_keys_spec.rb
+(snip)
+
+/Users/koic/src/github.com/hahie/hashie/spec/hashie/extensions/mash/symbolize_keys_spec.rb:29:
+warning: Using the last argument as keyword parameters is
+deprecated; maybe ** should be added to the call
+/Users/koic/src/github.com/hahie/hashie/spec/hashie/extensions/mash/symbolize_keys_spec.rb:21:
+warning: The called method `call' is defined here
+```
+
+For Ruby 2.8.0-dev (Ruby 3.0) the warning will be `ArgumentError`.
+ruby/ruby#2794
+
+Origin: https://github.com/hashie/hashie/commit/570409727e6ce02db3ad39579c49dcc73769ebc2.patch
+Forwarded: https://github.com/hashie/hashie/pull/511
+Bug-Debian: https://bugs.debian.org/996239
+---
+ spec/hashie/extensions/mash/symbolize_keys_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/spec/hashie/extensions/mash/symbolize_keys_spec.rb b/spec/hashie/extensions/mash/symbolize_keys_spec.rb
+index 1e52534..9846737 100644
+--- a/spec/hashie/extensions/mash/symbolize_keys_spec.rb
++++ b/spec/hashie/extensions/mash/symbolize_keys_spec.rb
+@@ -26,7 +26,7 @@ RSpec.describe Hashie::Extensions::Mash::SymbolizeKeys do
+     end
+     let(:instance) { my_mash.new('outer' => { 'inner' => 42 }, 'testing' => [1, 2, 3]) }
+ 
+-    subject { destructure.call(instance) }
++    subject { destructure.call(**instance) }
+ 
+     it 'is converted on method calls' do
+       expect(subject).to eq(outer: { inner: 42 }, testing: [1, 2, 3])
